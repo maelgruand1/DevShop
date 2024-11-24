@@ -1,24 +1,30 @@
-//global
-const pages = [index, moreAbout];
-const index = "index.html";
-const moreAbout = "moreAbout.html";
+// scripts.js
 
-function moreAbout() {
-  rediring = true;
-  window.location.href = "moreAbout.html";
+// Récupère toutes les sections et les liens du menu
+const sections = document.querySelectorAll('main > section');
+const menuLinks = document.querySelectorAll('#menu a');
+
+// Fonction pour afficher une section et cacher les autres
+function afficherSection(sectionId) {
+  sections.forEach((section) => {
+    if (section.id === sectionId) {
+      section.classList.remove('hidden'); // Affiche la section
+    } else {
+      section.classList.add('hidden'); // Cache les autres
+    }
+  });
 }
-// Menu toggle pour mobiles
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
 
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('open');
+// Ajoute un gestionnaire d'événements à chaque lien de menu
+menuLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); // Empêche le comportement par défaut
+    const sectionId = e.target.getAttribute('data-section'); // Récupère l'ID de la section à afficher
+    afficherSection(sectionId);
+  });
 });
 
-// Formulaire (exemple d'alerte)
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  alert('Merci pour votre message ! Je vous répondrai rapidement.');
-  form.reset();
+// Cache toutes les sections sauf l'accueil au chargement
+window.addEventListener('DOMContentLoaded', () => {
+  afficherSection('accueil');
 });

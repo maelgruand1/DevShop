@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dev Shop | Ventes de services de développemenent</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <nav>
-      <h1>Mes Services</h1>
-      <ul id="menu">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="menu-toggle">☰</button>
-    </nav>
-  </header>
-  
-  <main>
-    <section id="accueil">
-      <h2>Bienvenue sur ma boutique en ligne</h2>
-      <p>Découvrez mes services de développement web sur mesure.</p>
-      <button onclick="moreAbout()">En savoir plus</button>
-    </section>
-    
-    <section id="services">
-      <h2>Mes Services</h2>
-      <div class="service">
-        <h3>Création de site web</h3>
-        <p>Des sites modernes et optimisés pour tous vos besoins.</p>
-      </div>
-      <div class="service">
-        <h3>Maintenance</h3>
-        <p>Une gestion et un support continu pour vos projets.</p>
-      </div>
-    </section>
-    
-    <section id="contact">
-      <h2>Contactez-moi</h2>
-      <form id="contact-form">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2024 - Mes Services de Développement</p>
-  </footer>
-  
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boutique en ligne - Services Développeur</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Mes Services</h1>
+        <ul id="menu">
+          <li><a href="#" data-section="accueil">Accueil</a></li>
+          <li><a href="#" data-section="services">Services</a></li>
+          <li><a href="#" data-section="contact">Contact</a></li>
+        </ul>
+
+        <button id="menu-toggle">☰</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="accueil">
+        <h2>Bienvenue sur ma boutique en ligne</h2>
+        <p>Découvrez mes services de développement web sur mesure.</p>
+        <button>En savoir plus</button>
+      </section>
+
+      <section id="services">
+        <h2>Mes Services</h2>
+        <div class="service">
+          <h3>Création de site web</h3>
+          <p>Des sites modernes et optimisés pour tous vos besoins.</p>
+        </div>
+        <div class="service">
+          <h3>Maintenance</h3>
+          <p>Une gestion et un support continu pour vos projets.</p>
+        </div>
+        <div class="service">
+          <h3>Optimisation SEO</h3>
+          <p>Rendez votre site visible sur les moteurs de recherche.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contactez-moi</h2>
+        <form id="contact-form">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 - Mes Services de Développement</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
