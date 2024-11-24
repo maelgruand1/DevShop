@@ -13,10 +13,15 @@ function cacherToutesLesSections() {
 
 // Fonction pour afficher une seule section
 function afficherSection(sectionId) {
-  cacherToutesLesSections(); // Cache toutes les sections
-  const section = document.getElementById(sectionId); // Récupère la section par son ID
+  // Cacher toutes les sections
+  document.querySelectorAll("section").forEach((section) => {
+    section.classList.add("hidden");
+  });
+
+  // Afficher la section ciblée
+  const section = document.getElementById(sectionId);
   if (section) {
-    section.classList.remove("hidden"); // Retire la classe hidden pour afficher
+    section.classList.remove("hidden");
   }
 }
 

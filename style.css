@@ -82,4 +82,64 @@ body {
   .hidden {
     display: none;
   }
+  /* Zone de paiement */
+#paiement {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
   
+  #paiement h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input:focus {
+    border-color: #004080;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 64, 128, 0.2);
+  }
+  
+  button[type="submit"] {
+    padding: 10px;
+    font-size: 1rem;
+    background: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background: #0056b3;
+  }
