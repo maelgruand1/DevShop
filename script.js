@@ -5,7 +5,7 @@ const moreAbout = "moreAbout.html";
 
 function moreAbout() {
   rediring = true;
-  window.location.href = pages[1];
+  window.location.href = "moreAbout.html";
 }
 // Menu toggle pour mobiles
 const menuToggle = document.getElementById('menu-toggle');
