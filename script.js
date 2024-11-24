@@ -4,27 +4,33 @@
 const sections = document.querySelectorAll('main > section');
 const menuLinks = document.querySelectorAll('#menu a');
 
-// Fonction pour afficher une section et cacher les autres
-function afficherSection(sectionId) {
+// Fonction pour cacher toutes les sections
+function cacherToutesLesSections() {
   sections.forEach((section) => {
-    if (section.id === sectionId) {
-      section.classList.remove('hidden'); // Affiche la section
-    } else {
-      section.classList.add('hidden'); // Cache les autres
-    }
+    section.classList.add('hidden'); // Ajoute la classe hidden pour cacher
   });
 }
 
-// Ajoute un gestionnaire d'événements à chaque lien de menu
+// Fonction pour afficher une seule section
+function afficherSection(sectionId) {
+  cacherToutesLesSections(); // Cache toutes les sections
+  const section = document.getElementById(sectionId); // Récupère la section par son ID
+  if (section) {
+    section.classList.remove('hidden'); // Retire la classe hidden pour afficher
+  }
+}
+
+// Ajout d'événements sur chaque lien du menu
 menuLinks.forEach((link) => {
   link.addEventListener('click', (e) => {
-    e.preventDefault(); // Empêche le comportement par défaut
-    const sectionId = e.target.getAttribute('data-section'); // Récupère l'ID de la section à afficher
-    afficherSection(sectionId);
+    e.preventDefault(); // Empêche le comportement par défaut du lien
+    const sectionId = link.getAttribute('data-section'); // Récupère la valeur de data-section
+    afficherSection(sectionId); // Affiche la section correspondante
   });
 });
 
-// Cache toutes les sections sauf l'accueil au chargement
+// Au chargement de la page, affiche uniquement la section "Accueil"
 window.addEventListener('DOMContentLoaded', () => {
-  afficherSection('accueil');
+  cacherToutesLesSections(); // Cache tout
+  afficherSection('accueil'); // Affiche l'accueil
 });
